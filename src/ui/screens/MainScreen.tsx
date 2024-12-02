@@ -50,6 +50,9 @@ const MainScreen = ({ navigation }: MainScreenProps) => {
   const handleCardPress = (id: string) => {
     setSelectedCard((prevSelectedCard) => (prevSelectedCard === id ? null : id)); 
   };
+  const paymentMessage =() =>{
+    Alert.alert("Payment Successful",'Close the message to continue a new payment.');
+  }
 
   return (
     <View style={styles.container}>
@@ -93,6 +96,12 @@ const MainScreen = ({ navigation }: MainScreenProps) => {
         <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
         <Image source={require('../../../assets/icons/Log_out.png')} style={styles.addLogOutIcon} />
         </TouchableOpacity>
+        
+        {selectedCard && (
+          <TouchableOpacity style={styles.payButton} onPress={paymentMessage}>
+          <Image source={require('../../../assets/icons/pay.png')} style={styles.addPayIcon}/>
+          </TouchableOpacity>
+        )}
 
         <TouchableOpacity style={styles.profileButton} onPress={() => navigation.navigate('Profile')}>
         <Image source={require('../../../assets/icons/account_circle.png')} style={styles.addAccountIcon} />

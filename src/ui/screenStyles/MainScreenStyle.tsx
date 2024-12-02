@@ -50,6 +50,11 @@ export const styles = StyleSheet.create({
       bottom: 20,
       right: 20,
     },
+    payButton:{
+      position: 'absolute',
+      bottom: 20,
+      right: '50%',
+    },
     addPlusIcon: {
       width: 30, 
       height: 30, 
@@ -62,4 +67,11 @@ export const styles = StyleSheet.create({
       width: 40,
       height: 40, 
     },
+    addPayIcon:{
+      width: 150,
+      height: 150, 
+      position: 'absolute',
+      bottom: 20, 
+      alignSelf: 'center'
+    }
   });
